@@ -5,6 +5,7 @@ from todos.models import Todo
 
 class TodoSerializer(serializers.HyperlinkedModelSerializer):
     user = serializers.ReadOnlyField(source='user.username')
+    
 
     class Meta:
         model = Todo

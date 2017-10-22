@@ -6,6 +6,8 @@ pip install -r requirements.txt
 
 cd auth-api/auth_api/
 
+python manage.py makemigrations --noinput
+
 python manage.py migrate --noinput
 
 python manage.py collectstatic --noinput

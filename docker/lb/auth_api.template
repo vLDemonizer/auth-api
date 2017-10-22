@@ -1,9 +1,12 @@
+upstream auth-api {
+    server auth-api:8000;
+}
 
 server {
     listen 80;
     charset utf-8;
     location / {
-        proxy_pass http://auth-api:8000;
+        proxy_pass http://auth-api;
         include     /etc/nginx/uwsgi_params;
     }
 }
