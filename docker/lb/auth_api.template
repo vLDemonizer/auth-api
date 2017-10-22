@@ -4,6 +4,6 @@ server {
     charset utf-8;
     location / {
         proxy_pass http://auth-api:8000;
+        include     /etc/nginx/uwsgi_params;
     }
-
 }

@@ -26,7 +26,7 @@ SECRET_KEY = 'ok)(4$29rdra%9r1)e&21z26hc7(2!(q9wjy=8f!5-id3ci0g0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'auth-api']
+ALLOWED_HOSTS = ['auth-api']
 
 # Env vars
 for var in [
@@ -135,6 +135,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/'
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+)
+
+STATIC_URL = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
